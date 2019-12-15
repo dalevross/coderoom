@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>The Code Room</title>
+	<atom:link href="http://coderoom.dajengroup.com/feed/" rel="self" type="application/rss+xml" />
+	<link>http://coderoom.dajengroup.com</link>
+	<description>This is where we share our love for code with the world</description>
+	<lastBuildDate>Sat, 16 May 2015 06:41:29 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>OWLS League &#8211; Scrabble Tournament Assistant v2</title>
+		<link>http://coderoom.dajengroup.com/2015/05/10/owls-league/</link>
+		<comments>http://coderoom.dajengroup.com/2015/05/10/owls-league/#respond</comments>
+		<pubDate>Mon, 11 May 2015 02:10:10 +0000</pubDate>
+		<dc:creator><![CDATA[Dale Ross]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://coderoom.dajengroup.com/?p=1071</guid>
+		<description><![CDATA[<p>Today, May 10, 2015, I started writing the owls league, the next iteration of the scrabble tournament assistant. While it will help with the game I love dearly, It is also a part of my journey to cleaner code. I wrote about this before here. This blog post will be a journal of interesting activities [&#8230;]</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2015/05/10/owls-league/">OWLS League &#8211; Scrabble Tournament Assistant v2</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>Today, May 10, 2015, I started writing the owls league, the next iteration of the scrabble tournament assistant. While it will help with the game I love dearly, It is also a part of my journey to cleaner code. I wrote about this before <a href="http://coderoom.dajengroup.com/2015/02/18/the-scrabble-tournament-assistant-before/">here</a>.</p>
+<p>This blog post will be a journal of interesting activities along the way. If there&#8217;s something interesting enough to pull out into a blog post, I will.</p>
+<ul>
+<li>May 10, 2015  &#8211; Created <a href="https://github.com/dalevross/owlsleague">Github repository </a></li>
+<li>May 10, 2015  &#8211; <a href="http://laravel.com/docs/4.2">Created and commited new laravel application</a></li>
+<li>May 14,  2015 &#8211; Ran into setup issues due to missing mcrypt module</li>
+<li>May 15, 2015  &#8211;  <a href="https://laracasts.com/series/laravel-5-fundamentals/episodes/2">Installed vagrant and set up homestead</a> after requesting general advice.</li>
+</ul>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2015/05/10/owls-league/">OWLS League &#8211; Scrabble Tournament Assistant v2</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://coderoom.dajengroup.com/2015/05/10/owls-league/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>R at Work</title>
+		<link>http://coderoom.dajengroup.com/2015/04/26/r-at-work/</link>
+		<comments>http://coderoom.dajengroup.com/2015/04/26/r-at-work/#respond</comments>
+		<pubDate>Mon, 27 Apr 2015 00:39:58 +0000</pubDate>
+		<dc:creator><![CDATA[Dale Ross]]></dc:creator>
+				<category><![CDATA[R]]></category>
+		<category><![CDATA[Code Snippets]]></category>
+
+		<guid isPermaLink="false">http://coderoom.dajengroup.com/?p=1001</guid>
+		<description><![CDATA[<p>I like using things I&#8217;m learning to get actual work done. Theoretical knowledge can only go so far; Sometimes you just need to get your hands dirty. I&#8217;m doing R Programming as a part of a series of  Data Science courses on Coursera. Now, whenever Isee anything that mentions data, I start thinking in R. The other [&#8230;]</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2015/04/26/r-at-work/">R at Work</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>I like using things I&#8217;m learning to get actual work done. Theoretical knowledge can only go so far; Sometimes you just need to get your hands dirty.</p>
+<p>I&#8217;m doing <a href="https://www.coursera.org/course/rprog" target="_blank">R Programming</a> as a part of a series of  Data Science courses on Coursera. Now, whenever I<span style="line-height: 1.5;">see anything that mentions data, I start thinking in R.</span></p>
+<p>The other day, I needed to filter some data from an RMA <a href="http://www.rma.usda.gov/FTP/References/insurance_control_elements/PASS/2015/2015_D00042_IceYieldType_YTD.txt" target="_blank">data file</a>.</p>
+<p>&nbsp;</p>
+<p>I could have saved the file and used Excel to do the filtering but I have so much power with R, I just couldn&#8217;t help it.</p>
+<p>Here&#8217;s what I did in R.</p>
+<p><a href="https://github.com/dalevross/dajencodesnippets/blob/master/R/YieldTypes.R">https://github.com/dalevross/dajencodesnippets/blob/master/R/YieldTypes.R</a></p>
+<p>A friend at work, <a href="http://stackoverflow.com/users/195755/yzorg">@yzorg</a>, showed me another quick way to do it with Power Shell but I still love my R.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2015/04/26/r-at-work/">R at Work</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://coderoom.dajengroup.com/2015/04/26/r-at-work/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>FizzBuzz with Linq</title>
+		<link>http://coderoom.dajengroup.com/2015/03/06/fizzbuzz-with-linq/</link>
+		<comments>http://coderoom.dajengroup.com/2015/03/06/fizzbuzz-with-linq/#comments</comments>
+		<pubDate>Fri, 06 Mar 2015 21:22:04 +0000</pubDate>
+		<dc:creator><![CDATA[Dale Ross]]></dc:creator>
+				<category><![CDATA[C#]]></category>
+		<category><![CDATA[Clean Code]]></category>
+		<category><![CDATA[LINQ]]></category>
+		<category><![CDATA[pi]]></category>
+		<category><![CDATA[FizzBuzz]]></category>
+		<category><![CDATA[FizzBuzzPi]]></category>
+		<category><![CDATA[Interview Questions]]></category>
+		<category><![CDATA[Linq]]></category>
+		<category><![CDATA[Tuples]]></category>
+
+		<guid isPermaLink="false">http://coderoom.dajengroup.com/?p=781</guid>
+		<description><![CDATA[<p>I was reviewing potential interview questions and one intrigued me. The question was to provide an  alternate way to do FizzBuzz. I had previously done the straightforward loop method and pondered on it for a while. While washing our car, I had an inspired thought that I could easily do it  with Linq. I eventually came [&#8230;]</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2015/03/06/fizzbuzz-with-linq/">FizzBuzz with Linq</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>I was reviewing potential interview questions and one intrigued me.</p>
+<p>The question was to provide an  alternate way to do <a title="FizzBuzz" href="http://en.wikipedia.org/wiki/Fizz_buzz">FizzBuzz</a>. I had previously done the straightforward loop method and pondered on it for a while.</p>
+<p>While washing our car, I had an inspired thought that I could easily do it  with Linq. I eventually came up with  the following after getting up at about 3 am, this morning, 3/6/2015.</p>
+<p>&nbsp;</p>
+<pre>Console.Write(string.Join("\n",Enumerable.Range(1,100).Select( number =&gt; number % 15 == 0? "FizzBuzz": number % 5
+== 0? "Buzz" : number % 3 == 0 ? "Fizz" : number.ToString())).TrimEnd("\n".ToCharArray()));</pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Inspired by a past manager, Jason Bowers, who more or less planted the seeds of Clean Code in my mind,  I  continued through a bit longer. Now I don&#8217;t know if Jason approves, as I&#8217;m sure I could do more but here&#8217;s where I stopped.</p>
+<pre>
+
+class Program
+{
+
+static List&lt;Tuple&lt;int, string&gt;&gt; Divisor_FizzBuzzTuples = new List&lt;Tuple&lt;int, string&gt;&gt;();
+
+static void Main(string[] args)
+{
+int rangeStart = 1;
+int rangeEnd = 300;
+Divisor_FizzBuzzTuples.Add(new Tuple&lt;int,string&gt;(3,"Fizz"));
+Divisor_FizzBuzzTuples.Add(new Tuple&lt;int, string&gt;(5, "Buzz"));
+Divisor_FizzBuzzTuples.Add(new Tuple&lt;int, string&gt;(7, "Pi"));
+Divisor_FizzBuzzTuples.Add(new Tuple&lt;int, string&gt;(15, "FizzBuzz"));
+Divisor_FizzBuzzTuples.Add(new Tuple&lt;int, string&gt;(21, "FizzPi"));
+Divisor_FizzBuzzTuples.Add(new Tuple&lt;int, string&gt;(35, "BuzzPi"));
+Divisor_FizzBuzzTuples.Add(new Tuple&lt;int, string&gt;(105, "FizzBuzzPi"));
+
+Func&lt;int, string&gt; FizzBuzzify = i =&gt; GetFizzBuzzFromNumber(i);
+var fizzBuzzList = Enumerable.Range(rangeStart, rangeEnd).Select(FizzBuzzify);
+Console.Write(String.Join("\n", fizzBuzzList).TrimEnd("\n".ToCharArray()));
+
+}
+
+static string GetFizzBuzzFromNumber(int number)
+{
+string fizzbuzzornah = number.ToString();
+
+var list = Divisor_FizzBuzzTuples.OrderByDescending(i =&gt; i.Item1);
+foreach (var tuple in list)
+{
+if(number % tuple.Item1 == 0)
+{
+fizzbuzzornah = tuple.Item2;
+break;
+}
+
+}
+
+return fizzbuzzornah;
+
+}
+}
+
+</pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>I was considering  adding only primes and then doing the necessary permutations but I decided to stop and work on some other outstanding stuff I had to do.</p>
+<p><strong>Update: </strong>3/7/2014</p>
+<p>Folowing some engagement on Facebook by <a title="Elliott Manley" href="http://www.elliottmanley.co.uk/" target="_blank">Elliott Manley</a> who cowrote the <a title="OWLS Word Games Enhancer" href="http://tinyurl.com/free-tracker" target="_blank">OWLS Word Games Enhancer</a> with me I did come up with a better solution. It left me with a little egg on my face because I missed it.</p>
+<div id="fb-root"></div>
+<p><script>// <![CDATA[
+(function(d, s, id) {  var js, fjs = d.getElementsByTagName(s)[0];  if (d.getElementById(id)) return;  js = d.createElement(s); js.id = id;  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";  fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));
+// ]]&gt;</script></p>
+<div class="fb-post" data-href="https://www.facebook.com/dvross/posts/10155378905935374" data-width="466">
+<div class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/dvross/posts/10155378905935374">Post</a> by <a href="https://www.facebook.com/dvross">Dale Vivian Ross</a>.</div>
+</div>
+<pre>
+
+class Program
+{
+
+static List&lt;Tuple&lt;int, string&gt;&gt; Divisor_FizzBuzzTuples = new List&lt;Tuple&lt;int, string&gt;&gt;();
+
+static void Main(string[] args)
+{
+int rangeStart = 1;
+int rangeEnd = 300;
+Divisor_FizzBuzzTuples.Add(new Tuple&lt;int,string&gt;(3,"Fizz"));
+Divisor_FizzBuzzTuples.Add(new Tuple&lt;int, string&gt;(5, "Buzz"));
+Divisor_FizzBuzzTuples.Add(new Tuple&lt;int, string&gt;(7, "Pi"));
+
+Func&lt;int, string&gt; FizzBuzzify = i =&gt; GetFizzBuzzFromNumber(i);
+var fizzBuzzList = Enumerable.Range(rangeStart, rangeEnd).Select(FizzBuzzify);
+Console.Write(String.Join("\n", fizzBuzzList).TrimEnd("\n".ToCharArray()));
+
+}
+
+static string GetFizzBuzzFromNumber(int number)
+{
+StringBuilder fizzbuzzbuilder = new StringBuilder();
+
+var list = Divisor_FizzBuzzTuples.OrderBy(i =&gt; i.Item1).Distinct();
+foreach (var tuple in list)
+{
+if(number % tuple.Item1 == 0)
+{
+fizzbuzzbuilder.Append(tuple.Item2);
+}
+
+}
+
+string fizzbuzzornah = String.IsNullOrEmpty(fizzbuzzbuilder.ToString()) ? number.ToString() : fizzbuzzbuilder.ToString();
+
+return fizzbuzzornah;
+
+}
+}</pre>
+<p>Also, at the end of date night, my wife and I actually played Fizz Buzz, which she knew as Bizz Buzz from high school. She&#8217;s much better than I am but she actually helped me to relax and do better than I thought I could. With her help, I might even be able to be a Scrabble Grand Master!</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2015/03/06/fizzbuzz-with-linq/">FizzBuzz with Linq</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://coderoom.dajengroup.com/2015/03/06/fizzbuzz-with-linq/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>My Resume in JSON</title>
+		<link>http://coderoom.dajengroup.com/2015/02/21/my-resume-in-json/</link>
+		<comments>http://coderoom.dajengroup.com/2015/02/21/my-resume-in-json/#comments</comments>
+		<pubDate>Sat, 21 Feb 2015 05:23:20 +0000</pubDate>
+		<dc:creator><![CDATA[Dale Ross]]></dc:creator>
+				<category><![CDATA[Blogging]]></category>
+		<category><![CDATA[Reviews]]></category>
+		<category><![CDATA[8675309]]></category>
+		<category><![CDATA[hacker]]></category>
+		<category><![CDATA[json]]></category>
+		<category><![CDATA[jsonresume]]></category>
+		<category><![CDATA[resume]]></category>
+
+		<guid isPermaLink="false">http://coderoom.dajengroup.com/?p=351</guid>
+		<description><![CDATA[<p>A few days ago I decided to redo my resume. I decided to head over to hacker news to see if I could find a cool hacker way to get it done. As my wife &#8220;The Irie Happy Vegan&#8221; would say, I needed to find a bulldozer to kill this fly. I saw a post [&#8230;]</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2015/02/21/my-resume-in-json/">My Resume in JSON</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>A few days ago I decided to redo my resume. I decided to head over to hacker news to see if I could find a cool hacker way to get it done. As my wife &#8220;<a title="Irie Happy Vegan" href="http://www.dajeneats.com" target="_blank">The Irie Happy Vegan</a>&#8221; would say, I needed to find a bulldozer to kill this fly. I saw a post that I had come across before about <a href="https://jsonresume.org/" target="_blank">jsonresume</a>.  I decided to take it for a spin and thought it was pretty neat.</p>
+<p>Well, here is the JSON repo: https://github.com/dalevross/jsonresume<br />
+Elegant theme: <a href="http://registry.jsonresume.org/dalevross" target="_blank">http://registry.jsonresume.org/dalevross</a><br />
+Other themes <a href="http://registry.jsonresume.org/dalevross?theme=paper" target="_blank">Paper</a>, <a href="http://registry.jsonresume.org/dalevross?theme=kendall" target="_blank">Kendall</a>, <a href="http://registry.jsonresume.org/dalevross?theme=flat" target="_blank">Flat</a>, <a href="http://registry.jsonresume.org/dalevross?theme=modern" target="_blank">Modern</a>, <a href="http://registry.jsonresume.org/dalevross?theme=classy" target="_blank">Classy</a>, <a href="http://registry.jsonresume.org/dalevross?theme=class" target="_blank">Class</a>, <a href="http://registry.jsonresume.org/dalevross?theme=short" target="_blank">Short</a>, <a href="http://registry.jsonresume.org/dalevross?theme=slick" target="_blank">Slick</a>, <a href="http://registry.jsonresume.org/dalevross?theme=kwan" target="_blank">Kwan</a></p>
+<p>I decided to play around with Camtasia a little bit and figured this was a great thing to talk about and a good time to talk about it.</p>
+<p>So, here is my quick and fairly clean review of jsonresume.</p>
+<p><iframe width="1000" height="563" src="https://www.youtube.com/embed/moBs_GMdnEw?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>&nbsp;</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2015/02/21/my-resume-in-json/">My Resume in JSON</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://coderoom.dajengroup.com/2015/02/21/my-resume-in-json/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>The Scrabble Tournament Assistant &#8211; BEFORE</title>
+		<link>http://coderoom.dajengroup.com/2015/02/18/the-scrabble-tournament-assistant-before/</link>
+		<comments>http://coderoom.dajengroup.com/2015/02/18/the-scrabble-tournament-assistant-before/#comments</comments>
+		<pubDate>Wed, 18 Feb 2015 12:51:59 +0000</pubDate>
+		<dc:creator><![CDATA[Dale Ross]]></dc:creator>
+				<category><![CDATA[Clean Code]]></category>
+		<category><![CDATA[Refactoring]]></category>
+
+		<guid isPermaLink="false">http://coderoom.dajengroup.com/?p=261</guid>
+		<description><![CDATA[<p>In my last blog post, I promised to journal my attempt at cleaning up some code I wrote to make maintaining it a much easier task. The application I mentioned was called, at least by me, the Scrabble Tournament Assistant. Prior to writing the application, I had been asked to help with moderating duties. These duties [&#8230;]</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2015/02/18/the-scrabble-tournament-assistant-before/">The Scrabble Tournament Assistant &#8211; BEFORE</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>In my <a title="Cleaner Code, Lighter Load" href="http://coderoom.dajengroup.com/2015/01/29/cleaner-code-lighter-load/">last blog post</a>, I promised to journal my attempt at cleaning up some code I wrote to make maintaining it a much easier task. The application I mentioned was called, at least by me, the Scrabble Tournament Assistant.</p>
+<p>Prior to writing the application, I had been asked to help with moderating duties. These duties involved checking forums for game links, verifying the scores stated by the players and posting the scores to spreadsheets. This system worked well but involved additional QA to ensure the recorded scores were accurate. Something tells me they introduced this when I came in as I can&#8217;t be trusted outside of an IDE, or notepad when necessary.</p>
+<p>Eventually, the process was standardized to such a degree that I couldn&#8217;t help but notice a few things that could be handed off to a CPU somewhere. I won&#8217;t mention that I was just too lazy to do it manually. OK, I was just too lazy to do it manually. As I sometimes do, I took out the cod&#8217;n guns and went at it. This really comes down to the effort put into standardizing the process by the admins, without which I might not have taken on the task to automate it.</p>
+<p>I had also been fiddling around enough with the games we were using for the tournaments to see certain things that I could use. Fiddling included the use of fiddler, eventually, to see the APIs being used by the games to return data for the flash front ends. I figured the hits I&#8217;d introduce wouldn&#8217;t affect the performance, so they wouldn&#8217;t mind. I did reach out, and they did consent, through silence :).</p>
+<p>There&#8217;s a lot more I could say about the experience and the fantastic admins for what is now the OWLS (Online Wordcraper Lexulous and Scrabble) League. This post is intended, however, to be an overview of the initial state of the application before my attempt to clean/refactor the code.  I did miss some obvious code smells in my run through, but I&#8217;ll try to cover those in the refactoring process.</p>
+<p>This is also my first venture into narrated videos, so the quality should improve over time.</p>
+<p><iframe width="1000" height="563" src="https://www.youtube.com/embed/TKmicqnQaGY?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>In addition to rewriting the application, it will be changed from an admin facing application to a player facing application. It will also use a database instead of a spreadsheet and I&#8217;ll be learning some laravel, woohoo!</p>
+<p>&nbsp;</p>
+<p>Feel free to check out my <a title="OWLS Word Games Enhancer" href="http://tinyurl.com/free-tracker" target="_blank">chrome extension</a> as well, developed with Sir Elliot Manley from the UK.</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2015/02/18/the-scrabble-tournament-assistant-before/">The Scrabble Tournament Assistant &#8211; BEFORE</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://coderoom.dajengroup.com/2015/02/18/the-scrabble-tournament-assistant-before/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Cleaner Code, Lighter Load</title>
+		<link>http://coderoom.dajengroup.com/2015/01/29/cleaner-code-lighter-load/</link>
+		<comments>http://coderoom.dajengroup.com/2015/01/29/cleaner-code-lighter-load/#comments</comments>
+		<pubDate>Thu, 29 Jan 2015 06:48:32 +0000</pubDate>
+		<dc:creator><![CDATA[Dale Ross]]></dc:creator>
+				<category><![CDATA[Refactoring]]></category>
+		<category><![CDATA[Clean Code]]></category>
+		<category><![CDATA[Code Room]]></category>
+		<category><![CDATA[github]]></category>
+		<category><![CDATA[Laravel]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Scrabble]]></category>
+
+		<guid isPermaLink="false">http://coderoom.dajengroup.com/?p=101</guid>
+		<description><![CDATA[<p>I promised that the Code Room would be seeing some love this year. I intend to walk through a few languages [A-Z] to learn more about the languages myself identify common traits and differences keep the Code Room alive. remind myself who I once was and will forever be. (recursion_man) share my journey with my millions [&#8230;]</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2015/01/29/cleaner-code-lighter-load/">Cleaner Code, Lighter Load</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>I promised that the Code Room would be seeing some love this year. I intend to walk through a few languages [A-Z] to</p>
+<ol>
+<li>learn more about the languages myself</li>
+<li>identify common traits and differences</li>
+<li>keep the Code Room alive.</li>
+<li>remind myself who I once was and will forever be. (recursion_man)</li>
+<li>share my journey with my millions of fans across the universe, imaginary though they might be.</li>
+</ol>
+<p>Before I commence that journey down the road that will lead me to my &#8220;personal legend&#8221;, I&#8217;ve decided to make myself vulnerable by putting some code I wrote, hacker style, out for all eyes to see. I wrote an application to help myself and some friends to manage an online scrabble league and will today make it public.</p>
+<p>Scrabble has been my good friend and has introduced me to some wonderful people. I was happy to help to minimize the administrative load by automating away the mundane. For my efforts, I was knighted many times over. Sir Dale, they said, which swelled my head. I&#8217;m sure if they saw the code they&#8217;d take it back.</p>
+<p>My favorite go to language for non-professional development then, was PHP. I tried my best to keep what existed before my arrival intact, which meant keeping the Google Spreadsheets back end. That meant that I would be learning how to post to Google Spreadsheets, and that I did. There were a few other things I eventually added to the application to make the lives of my scrabble buds easier. This included the ability to post game links that retrieved scores automatically from XML based web services, used by the developers of a few variants of the original scrabble game. This helped to lessen the QA load, since the scores no longer needed confirmation. I included proxy services to consume these services and send JSON back to the front end.</p>
+<p>Now, this was fun. But the code was certainly not clean. There were duplicated methods across files and though it has been a while I&#8217;m sure there were methods that could have been consolidated in each file. There was a lot that could have been done differently but I just needed to see it GO. I just wanted to see the smiles.</p>
+<p>I&#8217;m still on that thread with my admin friends from South Africa, The UK, Canada, and the US. I still get a virtual pi inspired birthday cake every year on my special day. Though we&#8217;re separated by many miles and years, I still get to joke around with my friends who loved Sir D&#8217;s app. Thanks Facebook!</p>
+<p>As I said recently on that little blue app Mark and his friends wrote.<br />
+<em>&#8220;Write code, even if it&#8217;s not the right code and at first can&#8217;t handle the right load. It might even not link the right node. Just write code&#8221;</em></p>
+<p>So I wrote code, and now I&#8217;m pushing it to github. After that, I hope to allocate some time to refactor what is there. That does not automatically mean using a framework but I will do that. I&#8217;ve heard great things about <a title="laravel" href="http://laravel.com/" target="_blank">laravel</a>, so I&#8217;ll take a stab at it.</p>
+<p>Here is the repository: <a title="https://github.com/dalevross/scrabtourneyasst" href="https://github.com/dalevross/scrabtourneyasst">https://github.com/dalevross/scrabtourneyasst</a>.</p>
+<p>The app: <a title="http://scrabtourneyasst.herokuapp.com/manageleague.php" href="http://scrabtourneyasst.herokuapp.com/manageleague.php" target="_blank">http://scrabtourneyasst.herokuapp.com/manageleague.php</a> , which requires access to the appropriate spreadsheets.</p>
+<p>The main pages used for tournaments were managetbreak.php and manageleague.php with everything linking from there.</p>
+<p>It was suggested that I record my attempt at refactoring. That should be fun.</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2015/01/29/cleaner-code-lighter-load/">Cleaner Code, Lighter Load</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://coderoom.dajengroup.com/2015/01/29/cleaner-code-lighter-load/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Committment to Consistently Code</title>
+		<link>http://coderoom.dajengroup.com/2015/01/21/commit-consistent-code/</link>
+		<comments>http://coderoom.dajengroup.com/2015/01/21/commit-consistent-code/#comments</comments>
+		<pubDate>Wed, 21 Jan 2015 04:28:01 +0000</pubDate>
+		<dc:creator><![CDATA[Dale Ross]]></dc:creator>
+				<category><![CDATA[Blogging]]></category>
+		<category><![CDATA[blog]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[course]]></category>
+		<category><![CDATA[simple programmer]]></category>
+		<category><![CDATA[sonmez]]></category>
+
+		<guid isPermaLink="false">http://dajencoderoom.azurewebsites.net/?p=1</guid>
+		<description><![CDATA[<p>The Code Room has been in existence for quite some time. It was intended to be, as the headline stated, &#8220;A code snippet archive, how-i-did-its, some corny jokes and a look into the mind of recursion. I prefer lines of code to lines of blog text so this ride might be a little wild. Just [&#8230;]</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2015/01/21/commit-consistent-code/">Committment to Consistently Code</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>The Code Room has been in existence for quite some time. It was intended to be, as the headline stated,<br />
+&#8220;<em>A code snippet archive, how-i-did-its, some corny jokes and a look into the <strong>mind of recursion</strong>. I prefer lines of code to lines of blog text so this ride might be a little wild. Just come along though, and maybe we&#8217;ll see something great.</em>&#8221;</p>
+<p>Some code did make it to the blog, which was then hosted on blogger, but it never did get the investment it deserved. For as long as I&#8217;ve known how to, I&#8217;ve been in love with writing code. The language was never an issue, and I&#8217;ve joked that I eat learning curves for breakfast. Something changed over the years though. Complacency set in, I continued to hack here and there, and the world moved ahead while my skills stayed a few paces back from where they could be.</p>
+<p>This is the year I change that though, I will invest in my craft and I&#8217;ll share what I can with the world. The world might be saturated with opinions, but what is one more, with added wit and humor?</p>
+<p>Did I just decide to dive back here? No. The plan this year is to certify my skills and invest in leaving a mark in whatever way possible, through small purposeful steps.  Blogging wasn&#8217;t on my radar just yet. Then came the Simple Programmer, John Sonmez. Gold lies in his blog @  <a href="http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTUyNDk2NiIsImRlbGl2ZXJ5X2lkIjoiMTE3MTczMDEiLCJ1cmwiOiJodHRwOi8vc2ltcGxlcHJvZ3JhbW1lci5jb20_X192aWQ9N2EzYjc2MTA3Mjg3MDEzMjg1ZmYyMjAwMGIyYTg4ZDcifQ" target="_blank">http://simpleprogrammer.com</a>. He&#8217;s putting quality content out there, through his blog and other channels, to improve the craft and lives of programmers, coders and hackers. Check him out:  http://simpleprogrammer.com/about-me/, then buy his book. Tell him recursion sent ya :). Note, I won&#8217;t win anything.</p>
+<p>I visited John&#8217;s blog a few weeks back and decided to subscribe to his FREE course &#8220;<a href="http://devcareerboost.com/blog-course/"><strong>How To Build A Blog That Will Boost Your Career</strong></a>&#8220;. The title seemed interesting enough and I&#8217;ve always wanted to get my blog going. I&#8217;m glad I did. It&#8217;s just the nudge I needed to get back to the code room. It&#8217;s left up to me to remain consistent but John&#8217;s advice throughout the course gives great tips to not end up suffering from writer&#8217;s block.</p>
+<p>I&#8217;ll reveal the theme I&#8217;ll be going with to start later. This is just a thank you, to Mr. Sonmez, for bringing some life back to &#8220;THE CODE ROOM&#8221; *echoes*</p>
+<p>PS. I might not even have the best blog in my house but I&#8217;m happy Mrs. Ross is getting it done over at http://www.dajeneats.com</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2015/01/21/commit-consistent-code/">Committment to Consistently Code</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://coderoom.dajengroup.com/2015/01/21/commit-consistent-code/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>MCSD in 2015</title>
+		<link>http://coderoom.dajengroup.com/2015/01/04/mcsd-in-2015/</link>
+		<comments>http://coderoom.dajengroup.com/2015/01/04/mcsd-in-2015/#respond</comments>
+		<pubDate>Sun, 04 Jan 2015 19:14:00 +0000</pubDate>
+		<dc:creator><![CDATA[Dale Ross]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://coderoom.dajengroup.com/2015/01/04/mcsd-in-2015/</guid>
+		<description><![CDATA[<p>I have been writing code for a little while. Long enough to know enough about what I&#8217;m doing but there are some unacceptable gaps (thanks for the help stackoverflow and google). This year I&#8217;d love to close some of those gaps and the plan is to CERTIFY. If I study and practice enough to pass [&#8230;]</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2015/01/04/mcsd-in-2015/">MCSD in 2015</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<div style="clear: both; text-align: left;">I have been writing code for a little while. Long enough to know enough about what I&#8217;m doing but there are some unacceptable gaps (thanks for the help stackoverflow and google). This year I&#8217;d love to close some of those gaps and the plan is to CERTIFY. If I study and practice enough to pass the certs, then I&#8217;m pretty sure I should know a little more about what I&#8217;m doing.</div>
+<p>I am planning to be <b><a href="https://www.microsoft.com/learning/en-us/mcsd-web-apps-certification.aspx" target="_blank">MCSD : Web Applications </a></b>certified within the first half of 2015. It would be great to do the last exam in the track on the morning of March 14, 2015, a little before 9:30 &#8211; ish, just because, but I won&#8217;t rush it.</p>
+<p>I have also joined the <a href="http://certificationchallenge.com/" target="_blank">Microsoft Certification Challenge</a> as an added push to get me over the hump.</p>
+<div style="clear: both; text-align: center;"><a style="margin-left: 1em; margin-right: 1em;" href="http://coderoom.dajengroup.com/wp-content/uploads/2015/01/CertChallenge_354x356.jpg"><img src="http://coderoom.dajengroup.com/wp-content/uploads/2015/01/CertChallenge_354x356.jpg" alt="" width="318" height="320" border="0" /></a></div>
+<div style="clear: both; text-align: center;"></div>
+<p>No resolutions, just commitments. Oh dear, now I done said it.</p>
+<div style="clear: both; text-align: center;"><a style="margin-left: 1em; margin-right: 1em;" href="http://coderoom.dajengroup.com/wp-content/uploads/2015/01/foghorn.jpg"><img src="http://coderoom.dajengroup.com/wp-content/uploads/2015/01/foghorn.jpg" alt="" width="320" height="232" border="0" /></a></div>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2015/01/04/mcsd-in-2015/">MCSD in 2015</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://coderoom.dajengroup.com/2015/01/04/mcsd-in-2015/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>List&#060;awesome&#062; BucketList</title>
+		<link>http://coderoom.dajengroup.com/2013/12/08/list-bucketlist/</link>
+		<comments>http://coderoom.dajengroup.com/2013/12/08/list-bucketlist/#respond</comments>
+		<pubDate>Sun, 08 Dec 2013 17:18:00 +0000</pubDate>
+		<dc:creator><![CDATA[Dale Ross]]></dc:creator>
+				<category><![CDATA[Bucket List]]></category>
+		<category><![CDATA[3D Animation]]></category>
+		<category><![CDATA[Elon Musk]]></category>
+		<category><![CDATA[Neil deGrasse Tyson]]></category>
+		<category><![CDATA[Quantum Mechanics]]></category>
+		<category><![CDATA[Robotics]]></category>
+
+		<guid isPermaLink="false">http://coderoom.dajengroup.com/2013/12/08/list-bucketlist/</guid>
+		<description><![CDATA[<p>1. Build a Robot 2. Develop a Game 3. Become Proficient with 3D Animation 4. Talk with Neil deGrasse Tyson 5. Talk with Elon Musk on another planet 🙂 6. Understand Quantum Mechanics 7. Make one major discovery</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2013/12/08/list-bucketlist/">List&lt;awesome&gt; BucketList</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>1. Build a Robot<br />
+2. Develop a Game<br />
+3. Become Proficient with 3D Animation<br />
+4. Talk with Neil deGrasse Tyson<br />
+5. Talk with Elon Musk on another planet <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br />
+6. Understand Quantum Mechanics<br />
+7. Make one major discovery</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2013/12/08/list-bucketlist/">List&lt;awesome&gt; BucketList</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://coderoom.dajengroup.com/2013/12/08/list-bucketlist/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Converting Twitter Links To Follow Buttons</title>
+		<link>http://coderoom.dajengroup.com/2013/10/01/converting-twitter-links-to-follow-buttons/</link>
+		<comments>http://coderoom.dajengroup.com/2013/10/01/converting-twitter-links-to-follow-buttons/#respond</comments>
+		<pubDate>Tue, 01 Oct 2013 16:07:00 +0000</pubDate>
+		<dc:creator><![CDATA[Dale Ross]]></dc:creator>
+				<category><![CDATA[jQuery]]></category>
+		<category><![CDATA[twitter]]></category>
+		<category><![CDATA[jsshell]]></category>
+		<category><![CDATA[silicon prairie]]></category>
+
+		<guid isPermaLink="false">http://coderoom.dajengroup.com/2013/10/01/converting-twitter-links-to-follow-buttons/</guid>
+		<description><![CDATA[<p>Forgive the rushed nature of this post as I&#8217;m taking a short break to do it So I saw this http://www.siliconprairienews.com/2013/07/70-plus-kansas-city-area-startups-to-follow-on-twitter and decided why not follow them. We&#8217;ll be there too, right? Woah! 70 repeated click,navigate and follow instances. There must be a better way. Before &#160; &#160; &#160; &#160; &#160; So, I did a quick search [&#8230;]</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2013/10/01/converting-twitter-links-to-follow-buttons/">Converting Twitter Links To Follow Buttons</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>Forgive the rushed nature of this post as I&#8217;m taking a short break to do it</p>
+<p>So I saw this <a href="http://www.siliconprairienews.com/2013/07/70-plus-kansas-city-area-startups-to-follow-on-twitter">http://www.siliconprairienews.com/2013/07/70-plus-kansas-city-area-startups-to-follow-on-twitter</a> and decided why not follow them. We&#8217;ll be there too, right?</p>
+<p>Woah! 70 repeated click,navigate and follow instances. There must be a better way.</p>
+<table style="float: left; margin-right: 1em; text-align: left;" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td style="text-align: center;"><a style="clear: left; margin-bottom: 1em; margin-left: auto; margin-right: auto;" href="http://coderoom.dajengroup.com/wp-content/uploads/2013/10/siliconprairie-before.png"><img src="http://coderoom.dajengroup.com/wp-content/uploads/2013/10/siliconprairie-before-300x100.png" alt="" width="400" height="131" border="0" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">Before</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>So, I did a quick search and after some thought realized that the following jQuery snippet should work.</p>
+<pre></pre>
+<div class="code-embed-wrapper"> <pre class="language-javascript code-embed-pre"  data-start="1" data-line-offset="0"><code class="language-javascript code-embed-code">//Add the twitter-follow-button class to all anchors that contain twitter
+//The selector could be tweaked to be more specific.
+$(&#034;a[href*=twitter]&#034;).addClass(&#034;twitter-follow-button&#034;);
+
+//Add the twitter API code dynamically
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=&#034;//platform.twitter.com/widgets.js&#034;;fjs.parentNode.insertBefore(js,fjs);}}(document,&#034;script&#034;,&#034;twitter-wjs&#034;);</code></pre> <div class="code-embed-infos"> <span class="code-embed-name"></span> </div> </div>
+<p>I already had <a href="http://www.hugoware.net/projects/jsshell" target="_blank">jshell</a> inststalled. so I popped it in and waited.</p>
+<table style="float: left; margin-right: 1em; text-align: left;" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td style="text-align: center;"><a style="clear: left; margin-bottom: 1em; margin-left: auto; margin-right: auto;" href="http://coderoom.dajengroup.com/wp-content/uploads/2013/10/siliconprairie-after.png"><img src="http://coderoom.dajengroup.com/wp-content/uploads/2013/10/siliconprairie-after-300x171.png" alt="" width="400" height="226" border="0" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">After</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Then, click, click, click, click.</p>
+<p>The End.</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2013/10/01/converting-twitter-links-to-follow-buttons/">Converting Twitter Links To Follow Buttons</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://coderoom.dajengroup.com/2013/10/01/converting-twitter-links-to-follow-buttons/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

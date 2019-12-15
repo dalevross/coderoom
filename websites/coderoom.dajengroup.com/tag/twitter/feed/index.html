@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>The Code Room &#187; twitter</title>
+	<atom:link href="http://coderoom.dajengroup.com/tag/twitter/feed/" rel="self" type="application/rss+xml" />
+	<link>http://coderoom.dajengroup.com</link>
+	<description>This is where we share our love for code with the world</description>
+	<lastBuildDate>Sat, 16 May 2015 06:41:29 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=4.2.8</generator>
+	<item>
+		<title>Converting Twitter Links To Follow Buttons</title>
+		<link>http://coderoom.dajengroup.com/2013/10/01/converting-twitter-links-to-follow-buttons/</link>
+		<comments>http://coderoom.dajengroup.com/2013/10/01/converting-twitter-links-to-follow-buttons/#comments</comments>
+		<pubDate>Tue, 01 Oct 2013 16:07:00 +0000</pubDate>
+		<dc:creator><![CDATA[Dale Ross]]></dc:creator>
+				<category><![CDATA[jQuery]]></category>
+		<category><![CDATA[twitter]]></category>
+		<category><![CDATA[jsshell]]></category>
+		<category><![CDATA[silicon prairie]]></category>
+
+		<guid isPermaLink="false">http://coderoom.dajengroup.com/2013/10/01/converting-twitter-links-to-follow-buttons/</guid>
+		<description><![CDATA[<p>Forgive the rushed nature of this post as I&#8217;m taking a short break to do it So I saw this http://www.siliconprairienews.com/2013/07/70-plus-kansas-city-area-startups-to-follow-on-twitter and decided why not follow them. We&#8217;ll be there too, right? Woah! 70 repeated click,navigate and follow instances. There must be a better way. Before &#160; &#160; &#160; &#160; &#160; So, I did a quick search [&#8230;]</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2013/10/01/converting-twitter-links-to-follow-buttons/">Converting Twitter Links To Follow Buttons</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>Forgive the rushed nature of this post as I&#8217;m taking a short break to do it</p>
+<p>So I saw this <a href="http://www.siliconprairienews.com/2013/07/70-plus-kansas-city-area-startups-to-follow-on-twitter">http://www.siliconprairienews.com/2013/07/70-plus-kansas-city-area-startups-to-follow-on-twitter</a> and decided why not follow them. We&#8217;ll be there too, right?</p>
+<p>Woah! 70 repeated click,navigate and follow instances. There must be a better way.</p>
+<table style="float: left; margin-right: 1em; text-align: left;" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td style="text-align: center;"><a style="clear: left; margin-bottom: 1em; margin-left: auto; margin-right: auto;" href="http://coderoom.dajengroup.com/wp-content/uploads/2013/10/siliconprairie-before.png"><img src="http://coderoom.dajengroup.com/wp-content/uploads/2013/10/siliconprairie-before-300x100.png" alt="" width="400" height="131" border="0" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">Before</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>So, I did a quick search and after some thought realized that the following jQuery snippet should work.</p>
+<pre></pre>
+<div class="code-embed-wrapper">
+<pre class="language-javascript code-embed-pre" ><code class="language-javascript code-embed-code">//Add the twitter-follow-button class to all anchors that contain twitter
+//The selector could be tweaked to be more specific.
+$(&quot;a[href*=twitter]&quot;).addClass(&quot;twitter-follow-button&quot;);
+
+//Add the twitter API code dynamically
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=&quot;//platform.twitter.com/widgets.js&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;twitter-wjs&quot;);</code></pre>
+<div class="code-embed-infos">
+<span class="code-embed-name"></span>
+</div>
+</div>
+<p>I already had <a href="http://www.hugoware.net/projects/jsshell" target="_blank">jshell</a> inststalled. so I popped it in and waited.</p>
+<table style="float: left; margin-right: 1em; text-align: left;" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td style="text-align: center;"><a style="clear: left; margin-bottom: 1em; margin-left: auto; margin-right: auto;" href="http://coderoom.dajengroup.com/wp-content/uploads/2013/10/siliconprairie-after.png"><img src="http://coderoom.dajengroup.com/wp-content/uploads/2013/10/siliconprairie-after-300x171.png" alt="" width="400" height="226" border="0" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">After</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Then, click, click, click, click.</p>
+<p>The End.</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2013/10/01/converting-twitter-links-to-follow-buttons/">Converting Twitter Links To Follow Buttons</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://coderoom.dajengroup.com/2013/10/01/converting-twitter-links-to-follow-buttons/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

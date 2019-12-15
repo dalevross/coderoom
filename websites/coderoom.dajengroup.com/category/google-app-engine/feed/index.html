@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Google App Engine &#8211; The Code Room</title>
+	<atom:link href="http://coderoom.dajengroup.com/category/google-app-engine/feed/" rel="self" type="application/rss+xml" />
+	<link>http://coderoom.dajengroup.com</link>
+	<description>This is where we share our love for code with the world</description>
+	<lastBuildDate>Tue, 27 Dec 2016 15:17:55 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.7.3</generator>
+	<item>
+		<title>Hacker Cup Python Power Up</title>
+		<link>http://coderoom.dajengroup.com/2016/11/27/hacker-cup-python-power/</link>
+		<comments>http://coderoom.dajengroup.com/2016/11/27/hacker-cup-python-power/#respond</comments>
+		<pubDate>Mon, 28 Nov 2016 00:17:31 +0000</pubDate>
+		<dc:creator><![CDATA[Dale Ross]]></dc:creator>
+				<category><![CDATA[Google App Engine]]></category>
+		<category><![CDATA[msgpack]]></category>
+		<category><![CDATA[pi]]></category>
+		<category><![CDATA[Python]]></category>
+		<category><![CDATA[Scrabble]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://coderoom.dajengroup.com/?p=1151</guid>
+		<description><![CDATA[<p>I wouldn&#8217;t say I&#8217;m a python expert by any stretch of the imagination. When the time came to stand up and be counted for python-related lightning talks though, I couldn&#8217;t resist. Whenever the Facebook Hacker Cup comes around, and I happen to not miss it, I pull for trusty old python. It&#8217;s a scripting language, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2016/11/27/hacker-cup-python-power/">Hacker Cup Python Power Up</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>I wouldn&#8217;t say I&#8217;m a python expert by any stretch of the imagination. When the time came to stand up and be counted for python-related <a href="https://www.meetup.com/OrlandoPython/events/234873375/">lightning talks</a> though, I couldn&#8217;t resist.</p>
+<p>Whenever the Facebook Hacker Cup comes around, and I happen to not miss it, I pull for trusty old python. It&#8217;s a scripting language, that I have some familiarity with, and it works well within the rules of the &#8220;cup&#8221;.</p>
+<p>For the talk I discussed this and slipped in a python script I used for a dictionary service on Google App Engine (GAE) a while back.</p>
+<p>The python scripts for the hacker cups since I started taking records are hosted on bitbucket in the repository linked below.</p>
+<p><a href="https://bitbucket.org/dvross/facebook-hacker-cup">https://bitbucket.org/dvross/facebook-hacker-cup</a></p>
+<p>Problem Statements<br />
+1. 2014 Q &#8211; Square Detector<br />
+<a href="https://www.facebook.com/hackercup/problem/318555664954399/">https://www.facebook.com/hackercup/problem/318555664954399/<br />
+</a></p>
+<p>2. 2014 R1 &#8211; Labelmaker<br />
+<a href="https://www.facebook.com/hackercup/problem/637270059647812/">https://www.facebook.com/hackercup/problem/637270059647812/</a></p>
+<p>3. 2015 Q &#8211; Cooking the Books<br />
+<a href="https://www.facebook.com/hackercup/problem/582062045257424/">https://www.facebook.com/hackercup/problem/582062045257424/</a><br />
+Below is the script I used for the dictionary service</p>
+<div class="code-embed-wrapper"> <pre class="language-markup code-embed-pre"  data-start="1" data-line-offset="0"><code class="language-markup code-embed-code">import webapp2
+import json
+#import ijson.backends.python as ijson
+import ijson
+import msgpack
+import errno
+import sys
+
+def getDefinitionMsgPack(dictionaryName,word,self):
+        response = {}
+        dictionary = {}
+        
+        try:
+            infile = open(dictionaryName + &quot;.mpack&quot;, &quot;rb&quot;)
+        except IOError as e:
+            if e.errno == errno.ENOENT:
+                response = {&#039;found&#039;:False,&#039;why&#039;:&#039;Dictionary not supported&#039;}
+        else:
+            self.response.write(&#039;No exception - about to unpack&lt;br/&gt;&#039;)
+            with infile:
+                try:
+                    dictionary = msgpack.unpackb(infile.read())                               
+                except Exception as e:
+                    response = {&quot;Error&quot;:e.message}
+                else:
+                     if len(dictionary) != 0:
+                        if word == &quot;&quot;:
+                            response = {&#039;found&#039;:False, &#039;why&#039;:&#039;No word was submitted&#039;}          
+                        if word in dictionary:
+                            definition = dictionary[word]
+                            if(definition != &quot;&quot;):
+                                response = {&#039;found&#039;:True, &#039;definition&#039;:definition}
+                            else:
+                                response = {&#039;found&#039;:False, &#039;why&#039;:&#039;A definition for &#039; + word + &#039; was not found in &#039; + d.upper()}                        
+                        else:
+                                response = {&#039;found&#039;:False, &#039;why&#039;:word + &#039; was not found in &#039; + d.upper()}
+                     else:
+                        response = {&#039;found&#039;:False, &#039;why&#039;:&#039;Dictionary &#039; + d + &quot; is not supported&quot;}
+        return response
+    
+def getDefinition(dictionary,word):    
+        response = {}
+        try:
+            infile = open(dictionary + &quot;.json&quot;, &quot;rb&quot;)
+        except IOError as e:
+            if e.errno == errno.ENOENT:
+                response = {&#039;found&#039;:False,&#039;why&#039;:&#039;Dictionary not supported&#039;}
+        else:
+            with infile:
+                try:
+                    parser = ijson.parse(infile)
+                    for prefix,event, value in parser:
+                        if prefix == word:
+                            response = {&#039;found&#039;:True,&#039;definition&#039;:value,&#039;prefix&#039;:prefix}
+                            return response                        
+                    #File parsed successfully but nothing was found    
+                    response = {&#039;found&#039;:False,&#039;definition&#039;:word + &#039; was not found in &#039; + dictionary.upper()}
+                    return response
+                except Exception as e:
+                    response = {&#039;found&#039;:False,&#039;why&#039;:e}
+                    
+        return response
+               
+                    
+class MainPage(webapp2.RequestHandler): 
+    
+    def get(self):
+        response = {} 
+        d = self.request.get(&#039;d&#039;, default_value=&#039;collins&#039;)
+        word = self.request.get(&#039;word&#039;).upper()
+        method = self.request.get(&#039;method&#039;)
+        if method == &quot;getdef&quot;:
+            &#039;&#039;&#039; 
+            dictionary = getDictionary(d)
+            if len(dictionary) != 0:
+                if word == &quot;&quot;:
+                    response = {&#039;found&#039;:False, &#039;why&#039;:&#039;No word was submitted&#039;}          
+                if word in dictionary:
+                    definition = dictionary[word]
+                    if(definition != &quot;&quot;):
+                        response = {&#039;found&#039;:True, &#039;definition&#039;:dictionary[word],}
+                    else:
+                        response = {&#039;found&#039;:False, &#039;why&#039;:&#039;A definition for &#039; + word + &#039; was not found in &#039; + d.upper()}                        
+                else:
+                        response = {&#039;found&#039;:False, &#039;why&#039;:word + &#039; was not found in &#039; + d.upper()}
+            else:
+                response = {&#039;found&#039;:False, &#039;why&#039;:&#039;Dictionary &#039; + d + &quot; is not supported&quot;}
+               
+                
+            dictionary = {}
+            &#039;&#039;&#039;
+            response = getDefinitionMsgPack(d,word,self)
+            #Write JSON Header
+            self.response.headers[&#039;Content-Type&#039;] = &#039;application/json&#039;
+            self.response.write(json.dumps(response))
+           
+            
+application = webapp2.WSGIApplication([
+    (&#039;/&#039;, MainPage),
+], debug=True)</code></pre> <div class="code-embed-infos"> <a href="https://github.com/dalevross/scrabtourneyasst/blob/master/owlsserver-mpack.py" title="See owlsserver-mpack.py" target="_blank" class="code-embed-name">owlsserver-mpack.py</a> <a href="https://raw.github.com/dalevross/scrabtourneyasst/master/owlsserver-mpack.py" title="Back to owlsserver-mpack.py" class="code-embed-raw" target="_blank">view raw</a> </div> </div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>For reasons why you should start speaking more, see the post below from John Sonmez.<br />
+<a href="https://simpleprogrammer.com/2015/03/30/why-you-need-to-speak-at-your-next-code-camp/">https://simpleprogrammer.com/2015/03/30/why-you-need-to-speak-at-your-next-code-camp/</a></p>
+<p>&nbsp;</p>
+<p>I know, I know.</p>
+<p>&nbsp;</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2016/11/27/hacker-cup-python-power/">Hacker Cup Python Power Up</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://coderoom.dajengroup.com/2016/11/27/hacker-cup-python-power/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Key Value Pair Service on Google App Engine</title>
+		<link>http://coderoom.dajengroup.com/2013/09/09/key-value-pair-service-on-google-app-engine/</link>
+		<comments>http://coderoom.dajengroup.com/2013/09/09/key-value-pair-service-on-google-app-engine/#respond</comments>
+		<pubDate>Mon, 09 Sep 2013 12:26:00 +0000</pubDate>
+		<dc:creator><![CDATA[Dale Ross]]></dc:creator>
+				<category><![CDATA[Google App Engine]]></category>
+		<category><![CDATA[Google Chrome Extension]]></category>
+		<category><![CDATA[JSON]]></category>
+		<category><![CDATA[Python]]></category>
+		<category><![CDATA[Regular Expressions]]></category>
+		<category><![CDATA[cPickle]]></category>
+		<category><![CDATA[marshal]]></category>
+		<category><![CDATA[msgpack]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[zyzzyva]]></category>
+
+		<guid isPermaLink="false">http://coderoom.dajengroup.com/2013/09/09/key-value-pair-service-on-google-app-engine/</guid>
+		<description><![CDATA[<p>I had the need to include in-game dictionaries for an online game I was enhancing through a Google Chrome Extension. When I decided to look for a simple key value pair service to load the dictionaries, I assumed I&#8217;d find loads of examples or some stable implementation that I could leverage. I found one service [&#8230;]</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2013/09/09/key-value-pair-service-on-google-app-engine/">Key Value Pair Service on Google App Engine</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>I had the need to include in-game dictionaries for an online game I was enhancing through a <a href="http://tinyurl.com/free-tracker">Google Chrome Extension</a>.</p>
+<p>When I decided to look for a simple key value pair service to load the dictionaries, I assumed I&#8217;d find loads of examples or some stable implementation that I could leverage. I found one service that appeared to not have much support and a few examples which were not quite there.</p>
+<p>As I was busy with a few other things at the time, I mentioned <a href="https://developers.google.com/appengine/">Google App Engine</a> to the developer I was working with as a possible solution. I said, we might have a free solution if we manage to remain within the specified quotas. I hadn&#8217;t conceptualized the flow, so I couldn&#8217;t say whether or not that was possible. We needed to keep the price low (read zero) because the extension is free, and will always be. When a window opened up I decided to go for it.</p>
+<p>First decision,</p>
+<ol>
+<li>Go with PHP as that is the language I&#8217;ve used most often</li>
+<li>Go with Python to get more experience as I had done only a few basic example before.</li>
+</ol>
+<div>Easy choice, Python. Time to reduce the verbosity and get to the gold.</div>
+<div></div>
+<div>
+<h3>Step 1.</h3>
+</div>
+<div>Convert dictionaries to a static file that could be read quickly. I had a few failed attempts at getting good performance with</div>
+<div>
+<ul>
+<li>JSON</li>
+<li><a href="http://msgpack.org/" target="_blank">msgpack </a>&#8211; It claims to be like JSON but fast and small. It still didn&#8217;t work so well for me.</li>
+<li>marshal</li>
+</ul>
+<div>I then decided to try to implement cPickle which I&#8217;d read about before the other two but for some reason, I didn&#8217;t try it.</div>
+</div>
+<div></div>
+<div></div>
+<div class="code-embed-wrapper"> <pre class="language-python code-embed-pre"  data-start="1" data-line-offset="0"><code class="language-python code-embed-code">import sys
+import re #Regular expresensions module
+import cPickle
+
+
+#Get all but the first argument, this script accepts a list of dictionary files
+arguments = sys.argv[1:]
+
+#For each file that you pass to the script
+for filename in arguments:
+    
+    dictionary = {}    
+    
+    #Use file name without extension as dictionary name
+    dictname = re.search(r&#034;\(?P&lt;dicname&gt;w+).&#034;, filename).group(&#039;dicname&#039;)     
+    
+    #Open the current file
+    dictionaryFile = open(filename, &#034;r&#034;)
+    
+    #For each line in the dictionary file
+    &#039;&#039;&#039; Examples
+    AA rough, cindery lava [n -S]
+    AB an abdominal muscle [n -S]
+    AD an {advertisement=n} [n -S]
+    AE one [adj]
+    AG {agriculture=n} [n -S]
+    &#039;&#039;&#039;
+    for line in dictionaryFile:
+        
+        #Match a word (w+), followed by a possible space (s?), followed by the definition (.*)
+        #?P&lt;word&gt; allows you to name the group for retrieval later
+        match = re.match(r&#034;(?P&lt;word&gt;w+)s?(?P&lt;definition&gt;.*)&#034;, line)
+        if match is not None:
+            #If there is a match, add the word and its definition to the dictionary
+            dictionary[match.group(&#039;word&#039;)] = match.group(&#039;definition&#039;)
+        else:
+            #Otherwise, print the invalid line
+            print &#034;This line is invalid in file for &#034; + dictname + &#034;: &#034; + line
+    
+    with open(&#034;..\&#034; + dictname + &#034;.pickle&#034;, &#034;wb&#034;) as mfile:
+        #Create a file of type pickle, and dump the dictionary to it using the cPickle module        
+        cPickle.dump(dictionary, mfile) 
+    print &#039;Processed &#039; + dictname
+    
+print &#039;Done&#039; </code></pre> <div class="code-embed-infos"> </div> </div>
+<p>To be continued&#8230;&#8230;&#8230;</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2013/09/09/key-value-pair-service-on-google-app-engine/">Key Value Pair Service on Google App Engine</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://coderoom.dajengroup.com/2013/09/09/key-value-pair-service-on-google-app-engine/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

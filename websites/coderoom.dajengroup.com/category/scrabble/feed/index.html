@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>The Code Room &#187; Scrabble</title>
+	<atom:link href="http://coderoom.dajengroup.com/category/scrabble/feed/" rel="self" type="application/rss+xml" />
+	<link>http://coderoom.dajengroup.com</link>
+	<description>This is where we share our love for code with the world</description>
+	<lastBuildDate>Sat, 16 May 2015 06:41:29 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=4.2.9</generator>
+	<item>
+		<title>When jQuery met Wikipedia for a game of Scrabble</title>
+		<link>http://coderoom.dajengroup.com/2013/08/17/when-jquery-met-wikipedia-for-a-game-of-scrabble/</link>
+		<comments>http://coderoom.dajengroup.com/2013/08/17/when-jquery-met-wikipedia-for-a-game-of-scrabble/#comments</comments>
+		<pubDate>Sun, 18 Aug 2013 01:31:00 +0000</pubDate>
+		<dc:creator><![CDATA[Dale Ross]]></dc:creator>
+				<category><![CDATA[jQuery]]></category>
+		<category><![CDATA[JSON]]></category>
+		<category><![CDATA[Scrabble]]></category>
+		<category><![CDATA[Addon]]></category>
+		<category><![CDATA[Google Chrome]]></category>
+		<category><![CDATA[json]]></category>
+		<category><![CDATA[jsshell]]></category>
+		<category><![CDATA[Scrabble Tile Values]]></category>
+		<category><![CDATA[Wikipedia]]></category>
+
+		<guid isPermaLink="false">http://coderoom.dajengroup.com/2013/08/17/when-jquery-met-wikipedia-for-a-game-of-scrabble-2/</guid>
+		<description><![CDATA[<p>I needed to obtain a JSON object containing the tile values on scrabble tiles for a project I took on. This was across 8 dictionaries (6 languages). The problem was, I couldn&#8217;t  find a good source for the required data. I have since found a far easier way to obtain the data but it was [&#8230;]</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2013/08/17/when-jquery-met-wikipedia-for-a-game-of-scrabble/">When jQuery met Wikipedia for a game of Scrabble</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>I needed to obtain a <a href="http://www.json.org/" target="_blank">JSON </a>object containing the tile values on scrabble tiles for a <a href="http://tinyurl.com/free-tracker" target="_blank">project </a>I took on. This was across 8 dictionaries (6 languages). The problem was, I couldn&#8217;t  find a good source for the required data. I have since found a far easier way to obtain the data but it was still a fun challenge.</p>
+<p>The best I could do at the time was <a href="http://en.wikipedia.org/wiki/Scrabble_letter_distributions" target="_blank">http://en.wikipedia.org/wiki/Scrabble_letter_distributions</a>.</p>
+<p>The data was laid out as displayed below and it didn&#8217;t look very friendly.</p>
+<div style="border: 1px solid green;">
+<h3>English</h3>
+<p><a title="English language" href="http://www.blogger.com/wiki/English_language">English</a>-language editions of Scrabble contain 100 letter tiles, in the following distribution:</p>
+<ul>
+<li>2 blank tiles (scoring 0 points)</li>
+<li><i>1 point</i>: <b>E</b> ×12, <b>A</b> ×9, <b>I</b> ×9, <b>O</b> ×8, <b>N</b> ×6, <b>R</b> ×6, <b>T</b> ×6, <b>L</b> ×4, <b>S</b> ×4, <b>U</b> ×4</li>
+<li><i>2 points</i>: <b>D</b> ×4, <b>G</b> ×3</li>
+<li><i>3 points</i>: <b>B</b> ×2, <b>C</b> ×2, <b>M</b> ×2, <b>P</b> ×2</li>
+<li><i>4 points</i>: <b>F</b> ×2, <b>H</b> ×2, <b>V</b> ×2, <b>W</b> ×2, <b>Y</b> ×2</li>
+<li><i>5 points</i>: <b>K</b> ×1</li>
+<li><i>8 points</i>: <b>J</b> ×1, <b>X</b> ×1</li>
+<li><i>10 points</i>: <b>Q</b> ×1, <b>Z</b> ×1</li>
+</ul>
+</div>
+<div>With a little inspection, I was able to identify the formatting applied to the required elements.Enter Google Chrome plus the <a href="https://chrome.google.com/webstore/detail/jsshell/kmgmkbicahmbceidoidjbkbpkfogaldh" target="_blank">jsshell </a>extension. Jsshell allows you to run jQuery on any page. Now isn&#8217;t that somethin&#8217; :-).So after a few (debatable) minutes I came up with the following</p>
+<p>&nbsp;</p>
+</div>
+<div class="code-embed-wrapper">
+<pre class="language-javascript code-embed-pre" ><code class="language-javascript code-embed-code">langs =[&quot;English&quot;,&quot;German&quot;,&quot;Spanish&quot;,&quot;Italian&quot;,&quot;French&quot;,&quot;Portuguese&quot;];
+var allvals ={};
+
+$.each(langs,function(){
+ lang = this.toString();
+ $lets = $(&quot;span#&quot; + this.toString()).parent().nextAll(&quot;ul&quot;).eq(0);
+ allvals[lang] = {};
+ $lets.find(&quot;li b&quot;).each(function(){
+  allvals[lang][$(this).text()] = parseInt($(this).siblings(&quot;li i&quot;).eq(0).text());
+ });
+});</code></pre>
+<div class="code-embed-infos">
+<span class="code-embed-name"></span>
+</div>
+</div>
+<pre>
+console.log(JSON.stringify(allvals));</pre>
+<p>In other words</p>
+<ol>
+<li>For each of the six languages specified, find the <b>span </b>with an id  equal to the language.</li>
+<li>Find the<b> <i>first</i></b><i> </i><b>list </b>following the <b>parent </b>of the identified <b>span</b></li>
+<li>For each <b>bold letter</b> in the list, assign the integer value of the <b>italicized </b>text which is a <b>sibling </b>of that letter to that letters index in that languages array.
+<ul>
+<li>Example, for the English dictionary, <b>Q </b>and <b>Z </b>(<b>bold</b>) are <i>10 points (italicized). </i>The integer value of  &#8220;10 points&#8221; is of course 10.</li>
+</ul>
+</li>
+</ol>
+<p>The result,</p>
+<div class="code-embed-wrapper">
+<pre class="language-javascript code-embed-pre" ><code class="language-javascript code-embed-code">{&quot;English&quot;:{&quot;E&quot;:1,&quot;A&quot;:1,&quot;I&quot;:1,&quot;O&quot;:1,&quot;N&quot;:1,&quot;R&quot;:1,&quot;T&quot;:1,&quot;L&quot;:1,&quot;S&quot;:1,&quot;U&quot;:1,&quot;D&quot;:2,&quot;G&quot;:2,&quot;B&quot;:3,&quot;C&quot;:3,&quot;M&quot;:3,&quot;P&quot;:3,&quot;F&quot;:4,&quot;H&quot;:4,&quot;V&quot;:4,&quot;W&quot;:4,&quot;Y&quot;:4,&quot;K&quot;:5,&quot;J&quot;:8,&quot;X&quot;:8,&quot;Q&quot;:10,&quot;Z&quot;:10},&quot;German&quot;:{&quot;E&quot;:1,&quot;N&quot;:1,&quot;S&quot;:1,&quot;I&quot;:1,&quot;R&quot;:1,&quot;T&quot;:1,&quot;U&quot;:1,&quot;A&quot;:1,&quot;D&quot;:1,&quot;H&quot;:2,&quot;G&quot;:2,&quot;L&quot;:2,&quot;O&quot;:2,&quot;M&quot;:3,&quot;B&quot;:3,&quot;W&quot;:3,&quot;Z&quot;:3,&quot;C&quot;:4,&quot;F&quot;:4,&quot;K&quot;:4,&quot;P&quot;:4,&quot;Ä&quot;:6,&quot;J&quot;:6,&quot;Ü&quot;:6,&quot;V&quot;:6,&quot;Ö&quot;:8,&quot;X&quot;:8,&quot;Q&quot;:10,&quot;Y&quot;:10},&quot;Spanish&quot;:{&quot;A&quot;:1,&quot;E&quot;:1,&quot;O&quot;:1,&quot;I&quot;:1,&quot;S&quot;:1,&quot;N&quot;:1,&quot;L&quot;:1,&quot;R&quot;:1,&quot;U&quot;:1,&quot;T&quot;:1,&quot;D&quot;:2,&quot;G&quot;:2,&quot;C&quot;:3,&quot;B&quot;:3,&quot;M&quot;:3,&quot;P&quot;:3,&quot;H&quot;:4,&quot;F&quot;:4,&quot;V&quot;:4,&quot;Y&quot;:4,&quot;CH&quot;:5,&quot;Q&quot;:5,&quot;J&quot;:8,&quot;LL&quot;:8,&quot;Ñ&quot;:8,&quot;RR&quot;:8,&quot;X&quot;:8,&quot;Z&quot;:10},&quot;Italian&quot;:{&quot;O&quot;:1,&quot;A&quot;:1,&quot;I&quot;:1,&quot;E&quot;:1,&quot;C&quot;:2,&quot;R&quot;:2,&quot;S&quot;:2,&quot;T&quot;:2,&quot;L&quot;:3,&quot;M&quot;:3,&quot;N&quot;:3,&quot;U&quot;:3,&quot;B&quot;:5,&quot;D&quot;:5,&quot;F&quot;:5,&quot;P&quot;:5,&quot;V&quot;:5,&quot;G&quot;:8,&quot;H&quot;:8,&quot;Z&quot;:8,&quot;Q&quot;:10},&quot;French&quot;:{&quot;E&quot;:1,&quot;A&quot;:1,&quot;I&quot;:1,&quot;N&quot;:1,&quot;O&quot;:1,&quot;R&quot;:1,&quot;S&quot;:1,&quot;T&quot;:1,&quot;U&quot;:1,&quot;L&quot;:1,&quot;D&quot;:2,&quot;M&quot;:2,&quot;G&quot;:2,&quot;B&quot;:3,&quot;C&quot;:3,&quot;P&quot;:3,&quot;F&quot;:4,&quot;H&quot;:4,&quot;V&quot;:4,&quot;J&quot;:8,&quot;Q&quot;:8,&quot;K&quot;:10,&quot;W&quot;:10,&quot;X&quot;:10,&quot;Y&quot;:10,&quot;Z&quot;:10},&quot;Portuguese&quot;:{&quot;A&quot;:1,&quot;E&quot;:1,&quot;I&quot;:1,&quot;O&quot;:1,&quot;S&quot;:1,&quot;U&quot;:1,&quot;M&quot;:1,&quot;R&quot;:1,&quot;T&quot;:1,&quot;D&quot;:2,&quot;L&quot;:2,&quot;C&quot;:2,&quot;P&quot;:2,&quot;N&quot;:3,&quot;B&quot;:3,&quot;Ç&quot;:3,&quot;F&quot;:4,&quot;G&quot;:4,&quot;H&quot;:4,&quot;V&quot;:4,&quot;J&quot;:5,&quot;Q&quot;:6,&quot;X&quot;:8,&quot;Z&quot;:8}}</code></pre>
+<div class="code-embed-infos">
+<span class="code-embed-name"></span>
+</div>
+</div>
+<div style="font-family: 'Times New Roman'; white-space: normal;"><b>Lines of code : 10</b></div>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2013/08/17/when-jquery-met-wikipedia-for-a-game-of-scrabble/">When jQuery met Wikipedia for a game of Scrabble</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://coderoom.dajengroup.com/2013/08/17/when-jquery-met-wikipedia-for-a-game-of-scrabble/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

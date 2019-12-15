@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>C# &#8211; The Code Room</title>
+	<atom:link href="http://coderoom.dajengroup.com/category/c/feed/" rel="self" type="application/rss+xml" />
+	<link>http://coderoom.dajengroup.com</link>
+	<description>This is where we share our love for code with the world</description>
+	<lastBuildDate>Tue, 27 Dec 2016 15:17:55 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.7.3</generator>
+	<item>
+		<title>FizzBuzz with Linq</title>
+		<link>http://coderoom.dajengroup.com/2015/03/06/fizzbuzz-with-linq/</link>
+		<comments>http://coderoom.dajengroup.com/2015/03/06/fizzbuzz-with-linq/#comments</comments>
+		<pubDate>Fri, 06 Mar 2015 21:22:04 +0000</pubDate>
+		<dc:creator><![CDATA[Dale Ross]]></dc:creator>
+				<category><![CDATA[C#]]></category>
+		<category><![CDATA[Clean Code]]></category>
+		<category><![CDATA[LINQ]]></category>
+		<category><![CDATA[pi]]></category>
+		<category><![CDATA[FizzBuzz]]></category>
+		<category><![CDATA[FizzBuzzPi]]></category>
+		<category><![CDATA[Interview Questions]]></category>
+		<category><![CDATA[Linq]]></category>
+		<category><![CDATA[Tuples]]></category>
+
+		<guid isPermaLink="false">http://coderoom.dajengroup.com/?p=781</guid>
+		<description><![CDATA[<p>I was reviewing potential interview questions and one intrigued me. The question was to provide an  alternate way to do FizzBuzz. I had previously done the straightforward loop method and pondered on it for a while. While washing our car, I had an inspired thought that I could easily do it  with Linq. I eventually came [&#8230;]</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2015/03/06/fizzbuzz-with-linq/">FizzBuzz with Linq</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>I was reviewing potential interview questions and one intrigued me.</p>
+<p>The question was to provide an  alternate way to do <a title="FizzBuzz" href="http://en.wikipedia.org/wiki/Fizz_buzz">FizzBuzz</a>. I had previously done the straightforward loop method and pondered on it for a while.</p>
+<p>While washing our car, I had an inspired thought that I could easily do it  with Linq. I eventually came up with  the following after getting up at about 3 am, this morning, 3/6/2015.</p>
+<p>&nbsp;</p>
+<pre>Console.Write(string.Join("\n",Enumerable.Range(1,100).Select( number =&gt; number % 15 == 0? "FizzBuzz": number % 5
+== 0? "Buzz" : number % 3 == 0 ? "Fizz" : number.ToString())).TrimEnd("\n".ToCharArray()));</pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Inspired by a past manager, Jason Bowers, who more or less planted the seeds of Clean Code in my mind,  I  continued through a bit longer. Now I don&#8217;t know if Jason approves, as I&#8217;m sure I could do more but here&#8217;s where I stopped.</p>
+<pre>
+
+class Program
+{
+
+static List&lt;Tuple&lt;int, string&gt;&gt; Divisor_FizzBuzzTuples = new List&lt;Tuple&lt;int, string&gt;&gt;();
+
+static void Main(string[] args)
+{
+int rangeStart = 1;
+int rangeEnd = 300;
+Divisor_FizzBuzzTuples.Add(new Tuple&lt;int,string&gt;(3,"Fizz"));
+Divisor_FizzBuzzTuples.Add(new Tuple&lt;int, string&gt;(5, "Buzz"));
+Divisor_FizzBuzzTuples.Add(new Tuple&lt;int, string&gt;(7, "Pi"));
+Divisor_FizzBuzzTuples.Add(new Tuple&lt;int, string&gt;(15, "FizzBuzz"));
+Divisor_FizzBuzzTuples.Add(new Tuple&lt;int, string&gt;(21, "FizzPi"));
+Divisor_FizzBuzzTuples.Add(new Tuple&lt;int, string&gt;(35, "BuzzPi"));
+Divisor_FizzBuzzTuples.Add(new Tuple&lt;int, string&gt;(105, "FizzBuzzPi"));
+
+Func&lt;int, string&gt; FizzBuzzify = i =&gt; GetFizzBuzzFromNumber(i);
+var fizzBuzzList = Enumerable.Range(rangeStart, rangeEnd).Select(FizzBuzzify);
+Console.Write(String.Join("\n", fizzBuzzList).TrimEnd("\n".ToCharArray()));
+
+}
+
+static string GetFizzBuzzFromNumber(int number)
+{
+string fizzbuzzornah = number.ToString();
+
+var list = Divisor_FizzBuzzTuples.OrderByDescending(i =&gt; i.Item1);
+foreach (var tuple in list)
+{
+if(number % tuple.Item1 == 0)
+{
+fizzbuzzornah = tuple.Item2;
+break;
+}
+
+}
+
+return fizzbuzzornah;
+
+}
+}
+
+</pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>I was considering  adding only primes and then doing the necessary permutations but I decided to stop and work on some other outstanding stuff I had to do.</p>
+<p><strong>Update: </strong>3/7/2014</p>
+<p>Folowing some engagement on Facebook by <a title="Elliott Manley" href="http://www.elliottmanley.co.uk/" target="_blank">Elliott Manley</a> who cowrote the <a title="OWLS Word Games Enhancer" href="http://tinyurl.com/free-tracker" target="_blank">OWLS Word Games Enhancer</a> with me I did come up with a better solution. It left me with a little egg on my face because I missed it.</p>
+<div id="fb-root"></div>
+<p><script>// <![CDATA[
+(function(d, s, id) {  var js, fjs = d.getElementsByTagName(s)[0];  if (d.getElementById(id)) return;  js = d.createElement(s); js.id = id;  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";  fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));
+// ]]&gt;</script></p>
+<div class="fb-post" data-href="https://www.facebook.com/dvross/posts/10155378905935374" data-width="466">
+<div class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/dvross/posts/10155378905935374">Post</a> by <a href="https://www.facebook.com/dvross">Dale Vivian Ross</a>.</div>
+</div>
+<pre>
+
+class Program
+{
+
+static List&lt;Tuple&lt;int, string&gt;&gt; Divisor_FizzBuzzTuples = new List&lt;Tuple&lt;int, string&gt;&gt;();
+
+static void Main(string[] args)
+{
+int rangeStart = 1;
+int rangeEnd = 300;
+Divisor_FizzBuzzTuples.Add(new Tuple&lt;int,string&gt;(3,"Fizz"));
+Divisor_FizzBuzzTuples.Add(new Tuple&lt;int, string&gt;(5, "Buzz"));
+Divisor_FizzBuzzTuples.Add(new Tuple&lt;int, string&gt;(7, "Pi"));
+
+Func&lt;int, string&gt; FizzBuzzify = i =&gt; GetFizzBuzzFromNumber(i);
+var fizzBuzzList = Enumerable.Range(rangeStart, rangeEnd).Select(FizzBuzzify);
+Console.Write(String.Join("\n", fizzBuzzList).TrimEnd("\n".ToCharArray()));
+
+}
+
+static string GetFizzBuzzFromNumber(int number)
+{
+StringBuilder fizzbuzzbuilder = new StringBuilder();
+
+var list = Divisor_FizzBuzzTuples.OrderBy(i =&gt; i.Item1).Distinct();
+foreach (var tuple in list)
+{
+if(number % tuple.Item1 == 0)
+{
+fizzbuzzbuilder.Append(tuple.Item2);
+}
+
+}
+
+string fizzbuzzornah = String.IsNullOrEmpty(fizzbuzzbuilder.ToString()) ? number.ToString() : fizzbuzzbuilder.ToString();
+
+return fizzbuzzornah;
+
+}
+}</pre>
+<p>Also, at the end of date night, my wife and I actually played Fizz Buzz, which she knew as Bizz Buzz from high school. She&#8217;s much better than I am but she actually helped me to relax and do better than I thought I could. With her help, I might even be able to be a Scrabble Grand Master!</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2015/03/06/fizzbuzz-with-linq/">FizzBuzz with Linq</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://coderoom.dajengroup.com/2015/03/06/fizzbuzz-with-linq/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

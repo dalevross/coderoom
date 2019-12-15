@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Refactoring &#8211; The Code Room</title>
+	<atom:link href="http://coderoom.dajengroup.com/category/refactoring/feed/" rel="self" type="application/rss+xml" />
+	<link>http://coderoom.dajengroup.com</link>
+	<description>This is where we share our love for code with the world</description>
+	<lastBuildDate>Tue, 27 Dec 2016 15:17:55 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.7.3</generator>
+	<item>
+		<title>The Scrabble Tournament Assistant &#8211; BEFORE</title>
+		<link>http://coderoom.dajengroup.com/2015/02/18/the-scrabble-tournament-assistant-before/</link>
+		<comments>http://coderoom.dajengroup.com/2015/02/18/the-scrabble-tournament-assistant-before/#comments</comments>
+		<pubDate>Wed, 18 Feb 2015 12:51:59 +0000</pubDate>
+		<dc:creator><![CDATA[Dale Ross]]></dc:creator>
+				<category><![CDATA[Clean Code]]></category>
+		<category><![CDATA[Refactoring]]></category>
+
+		<guid isPermaLink="false">http://coderoom.dajengroup.com/?p=261</guid>
+		<description><![CDATA[<p>In my last blog post, I promised to journal my attempt at cleaning up some code I wrote to make maintaining it a much easier task. The application I mentioned was called, at least by me, the Scrabble Tournament Assistant. Prior to writing the application, I had been asked to help with moderating duties. These duties [&#8230;]</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2015/02/18/the-scrabble-tournament-assistant-before/">The Scrabble Tournament Assistant &#8211; BEFORE</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>In my <a title="Cleaner Code, Lighter Load" href="http://coderoom.dajengroup.com/2015/01/29/cleaner-code-lighter-load/">last blog post</a>, I promised to journal my attempt at cleaning up some code I wrote to make maintaining it a much easier task. The application I mentioned was called, at least by me, the Scrabble Tournament Assistant.</p>
+<p>Prior to writing the application, I had been asked to help with moderating duties. These duties involved checking forums for game links, verifying the scores stated by the players and posting the scores to spreadsheets. This system worked well but involved additional QA to ensure the recorded scores were accurate. Something tells me they introduced this when I came in as I can&#8217;t be trusted outside of an IDE, or notepad when necessary.</p>
+<p>Eventually, the process was standardized to such a degree that I couldn&#8217;t help but notice a few things that could be handed off to a CPU somewhere. I won&#8217;t mention that I was just too lazy to do it manually. OK, I was just too lazy to do it manually. As I sometimes do, I took out the cod&#8217;n guns and went at it. This really comes down to the effort put into standardizing the process by the admins, without which I might not have taken on the task to automate it.</p>
+<p>I had also been fiddling around enough with the games we were using for the tournaments to see certain things that I could use. Fiddling included the use of fiddler, eventually, to see the APIs being used by the games to return data for the flash front ends. I figured the hits I&#8217;d introduce wouldn&#8217;t affect the performance, so they wouldn&#8217;t mind. I did reach out, and they did consent, through silence :).</p>
+<p>There&#8217;s a lot more I could say about the experience and the fantastic admins for what is now the OWLS (Online Wordcraper Lexulous and Scrabble) League. This post is intended, however, to be an overview of the initial state of the application before my attempt to clean/refactor the code.  I did miss some obvious code smells in my run through, but I&#8217;ll try to cover those in the refactoring process.</p>
+<p>This is also my first venture into narrated videos, so the quality should improve over time.</p>
+<p><iframe width="1000" height="563" src="https://www.youtube.com/embed/TKmicqnQaGY?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>In addition to rewriting the application, it will be changed from an admin facing application to a player facing application. It will also use a database instead of a spreadsheet and I&#8217;ll be learning some laravel, woohoo!</p>
+<p>&nbsp;</p>
+<p>Feel free to check out my <a title="OWLS Word Games Enhancer" href="http://tinyurl.com/free-tracker" target="_blank">chrome extension</a> as well, developed with Sir Elliot Manley from the UK.</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2015/02/18/the-scrabble-tournament-assistant-before/">The Scrabble Tournament Assistant &#8211; BEFORE</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://coderoom.dajengroup.com/2015/02/18/the-scrabble-tournament-assistant-before/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Cleaner Code, Lighter Load</title>
+		<link>http://coderoom.dajengroup.com/2015/01/29/cleaner-code-lighter-load/</link>
+		<comments>http://coderoom.dajengroup.com/2015/01/29/cleaner-code-lighter-load/#comments</comments>
+		<pubDate>Thu, 29 Jan 2015 06:48:32 +0000</pubDate>
+		<dc:creator><![CDATA[Dale Ross]]></dc:creator>
+				<category><![CDATA[Refactoring]]></category>
+		<category><![CDATA[Clean Code]]></category>
+		<category><![CDATA[Code Room]]></category>
+		<category><![CDATA[github]]></category>
+		<category><![CDATA[Laravel]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Scrabble]]></category>
+
+		<guid isPermaLink="false">http://coderoom.dajengroup.com/?p=101</guid>
+		<description><![CDATA[<p>I promised that the Code Room would be seeing some love this year. I intend to walk through a few languages [A-Z] to learn more about the languages myself identify common traits and differences keep the Code Room alive. remind myself who I once was and will forever be. (recursion_man) share my journey with my millions [&#8230;]</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2015/01/29/cleaner-code-lighter-load/">Cleaner Code, Lighter Load</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>I promised that the Code Room would be seeing some love this year. I intend to walk through a few languages [A-Z] to</p>
+<ol>
+<li>learn more about the languages myself</li>
+<li>identify common traits and differences</li>
+<li>keep the Code Room alive.</li>
+<li>remind myself who I once was and will forever be. (recursion_man)</li>
+<li>share my journey with my millions of fans across the universe, imaginary though they might be.</li>
+</ol>
+<p>Before I commence that journey down the road that will lead me to my &#8220;personal legend&#8221;, I&#8217;ve decided to make myself vulnerable by putting some code I wrote, hacker style, out for all eyes to see. I wrote an application to help myself and some friends to manage an online scrabble league and will today make it public.</p>
+<p>Scrabble has been my good friend and has introduced me to some wonderful people. I was happy to help to minimize the administrative load by automating away the mundane. For my efforts, I was knighted many times over. Sir Dale, they said, which swelled my head. I&#8217;m sure if they saw the code they&#8217;d take it back.</p>
+<p>My favorite go to language for non-professional development then, was PHP. I tried my best to keep what existed before my arrival intact, which meant keeping the Google Spreadsheets back end. That meant that I would be learning how to post to Google Spreadsheets, and that I did. There were a few other things I eventually added to the application to make the lives of my scrabble buds easier. This included the ability to post game links that retrieved scores automatically from XML based web services, used by the developers of a few variants of the original scrabble game. This helped to lessen the QA load, since the scores no longer needed confirmation. I included proxy services to consume these services and send JSON back to the front end.</p>
+<p>Now, this was fun. But the code was certainly not clean. There were duplicated methods across files and though it has been a while I&#8217;m sure there were methods that could have been consolidated in each file. There was a lot that could have been done differently but I just needed to see it GO. I just wanted to see the smiles.</p>
+<p>I&#8217;m still on that thread with my admin friends from South Africa, The UK, Canada, and the US. I still get a virtual pi inspired birthday cake every year on my special day. Though we&#8217;re separated by many miles and years, I still get to joke around with my friends who loved Sir D&#8217;s app. Thanks Facebook!</p>
+<p>As I said recently on that little blue app Mark and his friends wrote.<br />
+<em>&#8220;Write code, even if it&#8217;s not the right code and at first can&#8217;t handle the right load. It might even not link the right node. Just write code&#8221;</em></p>
+<p>So I wrote code, and now I&#8217;m pushing it to github. After that, I hope to allocate some time to refactor what is there. That does not automatically mean using a framework but I will do that. I&#8217;ve heard great things about <a title="laravel" href="http://laravel.com/" target="_blank">laravel</a>, so I&#8217;ll take a stab at it.</p>
+<p>Here is the repository: <a title="https://github.com/dalevross/scrabtourneyasst" href="https://github.com/dalevross/scrabtourneyasst">https://github.com/dalevross/scrabtourneyasst</a>.</p>
+<p>The app: <a title="http://scrabtourneyasst.herokuapp.com/manageleague.php" href="http://scrabtourneyasst.herokuapp.com/manageleague.php" target="_blank">http://scrabtourneyasst.herokuapp.com/manageleague.php</a> , which requires access to the appropriate spreadsheets.</p>
+<p>The main pages used for tournaments were managetbreak.php and manageleague.php with everything linking from there.</p>
+<p>It was suggested that I record my attempt at refactoring. That should be fun.</p>
+<p>The post <a rel="nofollow" href="http://coderoom.dajengroup.com/2015/01/29/cleaner-code-lighter-load/">Cleaner Code, Lighter Load</a> appeared first on <a rel="nofollow" href="http://coderoom.dajengroup.com">The Code Room</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://coderoom.dajengroup.com/2015/01/29/cleaner-code-lighter-load/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>
