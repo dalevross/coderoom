@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
 <html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
-  <head>
-    <meta content='dajencoderoom.blogspot.com' name='og:site_name '/><meta expr:content='data:view.title.escaped' property='og:title'/>
+<head>
+<meta content='573898403409167' property='fb:app_id'/>
+<meta expr:content='data:blog.canonicalUrl' property='og:url'/> 
+<meta content='global' name='distribution'/>
+<meta content='1 days' name='revisit'/>
+<meta content='1 days' name='revisit-after'/>
+<meta content='document' name='resource-type'/>
+<meta content='all' name='audience'/>
+<meta content='general' name='rating'/>
+<meta content='all' name='robots'/>
+<meta content='en-us' name='language'/>
+<meta content='USA' name='country'/>
+<meta content='@dalevross' name='twitter:site'/>
+<meta content='@dalevross' name='twitter:creator'/>
+<meta content='Dale V Ross' name='author'/>
+<meta content='dalevross@gmail.com' name='email'/>
+<meta content='blog.dalevross.com' name='og:site_name '/>
+<meta content='https://raw.githubusercontent.com/dalevross/coderoom/master/og-coderoom.png' name='twitter:image'/>
+<meta content='https://raw.githubusercontent.com/dalevross/coderoom/master/og-coderoom.png' property='og:image'/>
+<meta content='{     &quot;version&quot;: &quot;3.1.4&quot;,     &quot;configurations&quot;: [         {             &quot;name&quot;: &quot;Dale V. Ross&quot;,             &quot;type&quot;: &quot;human&quot;,             &quot;request&quot;: &quot;launch&quot;,             &quot;preLaunchTask&quot;: &quot;pray&quot;,             &quot;program&quot;: &quot;$1984/09/18/dale.ross&quot;,             &quot;args&quot;: [&quot;pi&quot;,&quot;love&quot;,&quot;math&quot;],             &quot;cwd&quot;: &quot;earth&quot;,             &quot;stopAtEntry&quot;: false                    }      ] }' property='og:image:alt'/>
+<meta expr:content='data:view.title.escaped' property='og:title'/>
 <meta expr:content='data:view.description.escaped' property='og:description'/>
+<meta content='The Code Room' name='og:site_name '/>
+<meta expr:content='data:view.title.escaped' property='og:title'/>
+<meta expr:content='data:view.description.escaped' property='og:description'/>
+  <meta content='article' property='og:type'/>
+<meta content='summary_large_image' name='twitter:card'/>
 <b:if cond='data:view.featuredImage'>
     <meta expr:content='resizeImage(data:view.featuredImage, 1200, &quot;1200:630&quot;)' property='og:image'/>
 <b:elseif cond='data:widgets'/>
@@ -14,7 +38,7 @@
     <meta expr:content='resizeImage(data:blog.postImageUrl, 1200, &quot;1200:630&quot;)' property='og:image'/>
 </b:if>
 <!--  Open Graph Tags Generator for Blogger: https://bit.ly/30tJixf -->
-    <b:if cond='data:blog.isMobile'>
+  <b:if cond='data:blog.isMobile'>
       <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
     <b:else/>
       <meta content='width=1100' name='viewport'/>
@@ -1005,37 +1029,28 @@ body.mobile {
       ]]>
     </b:template-skin>
     <b:include data='blog' name='google-analytics'/>
-<link href='http://alexgorbatchev.com/pub/sh/current/styles/shCore.css' rel='stylesheet' type='text/css'/> 
-<link href='http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css' rel='stylesheet' type='text/css'/> 
-<script src='http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js' type='text/javascript'/> 
-<script src='http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCpp.js' type='text/javascript'/> 
-<script src='http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCSharp.js' type='text/javascript'/> 
-<script src='http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCss.js' type='text/javascript'/> 
-<script src='http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js' type='text/javascript'/> 
-<script src='http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js' type='text/javascript'/> 
-<script src='http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPhp.js' type='text/javascript'/> 
-<script src='http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPython.js' type='text/javascript'/> 
-<script src='http://alexgorbatchev.com/pub/sh/current/scripts/shBrushRuby.js' type='text/javascript'/> 
-<script src='http://alexgorbatchev.com/pub/sh/current/scripts/shBrushSql.js' type='text/javascript'/> 
-<script src='http://alexgorbatchev.com/pub/sh/current/scripts/shBrushVb.js' type='text/javascript'/> 
-<script src='http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js' type='text/javascript'/> 
-<script src='http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPerl.js' type='text/javascript'/> 
-<script language='javascript'> 
-SyntaxHighlighter.config.bloggerMode = true;
-SyntaxHighlighter.config.clipboardSwf = &#39;http://alexgorbatchev.com/pub/sh/current/scripts/clipboard.swf&#39;;
-SyntaxHighlighter.all();
-</script>
-  </head>
+ </head>
 
   <body expr:class='&quot;loading&quot; + data:blog.mobileClass'>
-&lt;div id=&quot;fb-root&quot;&gt;&lt;/div&gt;
-&lt;script&gt;(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = &quot;//connect.facebook.net/en_US/all.js#xfbml=1&amp;appId=390735480949561&quot;;
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, &#39;script&#39;, &#39;facebook-jssdk&#39;));&lt;/script&gt;
+    &lt;script&gt;
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : &#39;573898403409167&#39;,
+      xfbml      : true,
+      version    : &#39;v5.0&#39;
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = &quot;https://connect.facebook.net/en_US/sdk.js&quot;;
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, &#39;script&#39;, &#39;facebook-jssdk&#39;));
+&lt;/script&gt;
+
 
   <b:section class='navbar' id='navbar' maxwidgets='1' showaddelement='no'>
     <b:widget id='Navbar1' locked='true' title='Navbar' type='Navbar'>
@@ -1345,19 +1360,18 @@ src=&quot;http://pagead2.googlesyndication.com/pagead/show_ads.js&quot;&gt;
                 <b:widget-setting name='showShareButtons'>true</b:widget-setting>
                 <b:widget-setting name='showCommentLink'>true</b:widget-setting>
                 <b:widget-setting name='style.urlcolor'>#80906a</b:widget-setting>
-                <b:widget-setting name='postLocationLabel'>Crystal River, Florida, USA</b:widget-setting>
                 <b:widget-setting name='showAuthor'>true</b:widget-setting>
                 <b:widget-setting name='disableGooglePlusShare'>true</b:widget-setting>
                 <b:widget-setting name='style.linkcolor'>#d52a33</b:widget-setting>
                 <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
                 <b:widget-setting name='style.bgcolor'>#fefdfa</b:widget-setting>
-                <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
+                <b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
                 <b:widget-setting name='style.layout'>1x1</b:widget-setting>
                 <b:widget-setting name='showLabels'>true</b:widget-setting>
-                <b:widget-setting name='showLocation'>true</b:widget-setting>
+                <b:widget-setting name='showLocation'>false</b:widget-setting>
                 <b:widget-setting name='showTimestamp'>true</b:widget-setting>
                 <b:widget-setting name='postsPerAd'>1</b:widget-setting>
-                <b:widget-setting name='showBacklinks'>false</b:widget-setting>
+                <b:widget-setting name='showBacklinks'>true</b:widget-setting>
                 <b:widget-setting name='style.bordercolor'>#fefdfa</b:widget-setting>
                 <b:widget-setting name='showInlineAds'>false</b:widget-setting>
                 <b:widget-setting name='showReactions'>false</b:widget-setting>
@@ -2471,7 +2485,7 @@ src=&quot;http://pagead2.googlesyndication.com/pagead/show_ads.js&quot;&gt;
   </b:widget>
   <b:widget id='HTML4' locked='false' title='Recent Tweets' type='HTML'>
     <b:widget-settings>
-      <b:widget-setting name='content'><![CDATA[<a class="twitter-timeline" href="https://twitter.com/dalevross?ref_src=twsrc%5Etfw">Tweets by dalevross</a> <script async="async" src="https://platform.twitter.com/widgets.js" charset="utf-8" ></script>]]></b:widget-setting>
+      <b:widget-setting name='content'><![CDATA[<a class="twitter-timeline"  data-tweet-limit="3" href="https://twitter.com/dalevross?ref_src=twsrc%5Etfw">Tweets by dalevross</a> <script async="async" src="https://platform.twitter.com/widgets.js" charset="utf-8" ></script>]]></b:widget-setting>
     </b:widget-settings>
     <b:includable id='main'>
   <!-- only display title if it's non-empty -->
@@ -2485,9 +2499,15 @@ src=&quot;http://pagead2.googlesyndication.com/pagead/show_ads.js&quot;&gt;
   <b:include name='quickedit'/>
 </b:includable>
   </b:widget>
-  <b:widget id='HTML1' locked='false' title='' type='HTML'>
+  <b:widget id='HTML1' locked='false' title='Engagement' type='HTML'>
     <b:widget-settings>
-      <b:widget-setting name='content'><![CDATA[<div class="fb-like" data-href="http://dajencoderoom.blogspot.com/" data-width="55" data-show-faces="true" data-send="true" data-layout="button_count"></div>]]></b:widget-setting>
+      <b:widget-setting name='content'>&lt;div class=&quot;fb-share-button&quot; data-href=&quot;https://blog.dalevross.com&quot; data-layout=&quot;box_count&quot; data-size=&quot;large&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.dalevross.com%2F&amp;amp;src=sdkpreparse&quot; class=&quot;fb-xfbml-parse-ignore&quot;&gt;Share&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;fb-like&quot; 
+    data-href=&quot;https://blog.dalevross.com&quot; 
+    data-layout=&quot;standard&quot; 
+    data-action=&quot;like&quot; 
+    data-show-faces=&quot;true&quot;&gt;
+&lt;/div&gt;</b:widget-setting>
     </b:widget-settings>
     <b:includable id='main'>
   <!-- only display title if it's non-empty -->
@@ -2509,55 +2529,8 @@ src=&quot;http://pagead2.googlesyndication.com/pagead/show_ads.js&quot;&gt;
   </div>
 </b:includable>
   </b:widget>
-  <b:widget id='Profile1' locked='false' title='$(&quot;life .interesting&quot;);' type='Profile'>
-    <b:widget-settings>
-      <b:widget-setting name='showaboutme'>true</b:widget-setting>
-      <b:widget-setting name='showlocation'>true</b:widget-setting>
-    </b:widget-settings>
-    <b:includable id='main'>
-    <b:if cond='data:title != &quot;&quot;'>
-      <h2><data:title/></h2>
-    </b:if>
-    <div class='widget-content'>
-    <b:if cond='data:team'> <!-- team blog profile -->
-      <ul>
-        <b:loop values='data:authors' var='i'>
-          <li><a class='profile-name-link g-profile' expr:href='data:i.userUrl' expr:style='&quot;background-image: url(&quot; + data:i.profileLogo + &quot;);&quot;'><data:i.display-name/></a></li>
-        </b:loop>
-      </ul>
-
-    <b:else/> <!-- normal blog profile -->
-
-      <b:if cond='data:photo.url != &quot;&quot;'>
-        <a expr:href='data:userUrl'><img class='profile-img' expr:alt='data:messages.myPhoto' expr:height='data:photo.height' expr:src='data:photo.url' expr:width='data:photo.width'/></a>
-      </b:if>
-
-      <dl class='profile-datablock'>
-        <dt class='profile-data'>
-          <a class='profile-name-link g-profile' expr:href='data:userUrl' expr:style='&quot;background-image: url(&quot; + data:profileLogo + &quot;);&quot;' rel='author'>
-            <data:displayname/>
-          </a>
-          <b:if cond='data:hasgoogleprofile'>
-            <br/>
-            <div class='g-follow' data-annotation='bubble' data-height='20' expr:data-href='data:userUrl'/>
-          </b:if>
-        </dt>
-
-        <b:if cond='data:showlocation'>
-          <dd class='profile-data'><data:location/></dd>
-        </b:if>
-
-        <b:if cond='data:aboutme != &quot;&quot;'><dd class='profile-textblock'><data:aboutme/></dd></b:if>
-      </dl>
-      <a class='profile-link' expr:href='data:userUrl' rel='author'><data:viewProfileMsg/></a>
-    </b:if>
-
-     <b:include name='quickedit'/>
-    </div>
-  </b:includable>
-  </b:widget>
 </b:section-contents><b:section-contents id='footer-1'>
-  <b:widget id='HTML2' locked='false' title='' type='HTML'>
+  <b:widget id='HTML2' locked='false' title='Google Ads' type='HTML'>
     <b:widget-settings>
       <b:widget-setting name='content'>&lt;script type=&quot;text/javascript&quot;&gt;&lt;!--
 google_ad_client = &quot;ca-pub-7968465758534936&quot;;
