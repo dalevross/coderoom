@@ -1,0 +1,3 @@
+[submodule "blogger-to-jekyll-url-redirect"]
+	path = blogger-to-jekyll-url-redirect
+	url = https://gist.github.com/56b59b49b9c5cb535972546dfca20d12.git

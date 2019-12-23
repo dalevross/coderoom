@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION;TYPE=WORK:3.0
+FN;CHARSET=UTF-8:Anne-Laure Le Cunff
+N;CHARSET=UTF-8:Anne-Laure Le Cunff;;;;
+PROFILE:VCARD
+ADR;CHARSET=UTF-8:;;40 Downham Road;London;;N1 5AL;United Kingdom
+EMAIL:annelaure@nesslabs.com
+ORG;CHARSET=UTF-8:Ness Labs
+URL:https://nesslabs.com/
+END:VCARD
